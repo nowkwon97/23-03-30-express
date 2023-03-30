@@ -11,7 +11,12 @@ app.listen(8080, function() {
 app.get('/pet', function(req, res) {
   res.send('펫 용품 쇼핑 페이지 입니다.');
 });
-
+// .get()여러개로 여러 경로 생성 가능
 app.get('/beauty', function(req, res) {
   res.send('뷰티 용품 쇼핑 페이지 입니다.')
+})
+// 메인 페이지에 html 파일을 띄워보자.
+// '/' -> 홈페이지를 의미
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html')
 })
