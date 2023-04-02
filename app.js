@@ -13,10 +13,21 @@ app.get('/pet', function(req, res) {
 });
 // .get()여러개로 여러 경로 생성 가능
 app.get('/beauty', function(req, res) {
-  res.send('뷰티 용품 쇼핑 페이지 입니다.')
+  res.send('<h1>뷰티 용품 쇼핑 페이지 입니다.</h1>')
 })
 // 메인 페이지에 html 파일을 띄워보자.
 // '/' -> 홈페이지를 의미
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
+
+app.get('/write', function(req, res) {
+  res.sendFile(__dirname + '/write.html')
+})
+
+// 어떤 사람이 /add 경로로 POST 요청을 하면...
+// ~~ 를 해주세요~
+app.post('/add', function(req, res) {
+  res.send('전송완료')
+});
+// 전달된 정보는 어디에 있을까? -> req에 있다.
